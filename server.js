@@ -34,7 +34,11 @@ function cutVideo(inputPath, duration, format, outputPath) {
     ffmpeg(inputPath)
       .setStartTime(0)
       .setDuration(duration)
-      .size(size)
+      .outputOptions([
+      "-vf scale=720:-2",
+      "-preset ultrafast",
+      "-crf 28"
+])
       .output(outputPath)
       .on('end', () => resolve(outputPath))
       .on('error', (err) => reject(err))
