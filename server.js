@@ -54,7 +54,7 @@ app.post('/create-shorts', upload.single('video'), async (req, res) => {
 
     res.json({
       success: true,
-      url: `https://SEU-LINK-AQUI/outputs/${outputFile}`,
+      url: `https://autoshorts-backend-kgod.onrender.com/outputs/${outputFile}`,
       language
     });
 
